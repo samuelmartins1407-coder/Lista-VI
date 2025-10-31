@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        char[] caracteres = new char[10];
+        int consoantes = 0;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < caracteres.length; i++) {
+            System.out.print("Digite o " + (i + 1) + "º caractere: ");
+            caracteres[i] = sc.next().toLowerCase().charAt(0);
+        }
+
+        System.out.println("Consoantes:");
+        for (char c : caracteres) {
+            if (Character.isLetter(c) && "aeiou".indexOf(c) == -1) {
+                System.out.println(c);
+                consoantes++;
+            }
+        }
+
+        System.out.println("Total de consoantes: " + consoantes);
+    }
+}
